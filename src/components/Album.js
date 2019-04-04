@@ -34,6 +34,16 @@ class Album extends Component {
     this.setState({ currentSong: song });
   }
 
+   handleSongClick(song) {
+     const isSameSong = this.state.currentSong === song;
+     if (this.state.isPlaying && isSameSong) {
+       this.pause();
+     } else {
+       if (!isSameSong) { this.setSong(song); }
+       this.play();
+     }
+   }
+
   render() {
     return (
       <section className="album">
@@ -54,8 +64,7 @@ class Album extends Component {
           <tbody>
             {
               this.state.album.songs.map( (song, index) =>
-                <tr>
-                  <button>Play</button>
+                <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
                   <th>{index+1}</th>
                   <td>{song.title}</td>
                   <td>{Math.floor(song.duration/60)+":"+Math.floor(song.duration%60)}</td>
