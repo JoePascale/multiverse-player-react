@@ -34,15 +34,25 @@ class Album extends Component {
     this.setState({ currentSong: song });
   }
 
-   handleSongClick(song) {
-     const isSameSong = this.state.currentSong === song;
-     if (this.state.isPlaying && isSameSong) {
-       this.pause();
-     } else {
-       if (!isSameSong) { this.setSong(song); }
-       this.play();
-     }
-   }
+  handleSongClick(song) {
+    const isSameSong = this.state.currentSong === song;
+    if (this.state.isPlaying && isSameSong) {
+      this.pause();
+    } else {
+      if (!isSameSong) { this.setSong(song); }
+      this.play();
+    }
+  }
+
+  convertTime(duration) {
+    var minutes = Math.floor(duration/60);
+    var seconds = duration - (minutes*60);
+    if (seconds < 10) {
+      seconds = '0' + seconds;
+    }
+    duration = minutes + ":" + seconds;
+    return duration;
+  }
 
   render() {
     return (
@@ -67,7 +77,7 @@ class Album extends Component {
                 <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
                   <th>{index+1}</th>
                   <td>{song.title}</td>
-                  <td>{Math.floor(song.duration/60)+":"+Math.floor(song.duration%60)}</td>
+                  <td>{this.convertTime(song.duration)}</td>
                 </tr>
               )
             }
