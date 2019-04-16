@@ -100,7 +100,7 @@ class Album extends Component {
 
   convertTime(duration) {
     var minutes = Math.floor(duration/60);
-    var seconds = duration - (minutes*60);
+    var seconds = Math.round(duration - (minutes*60));
     if (seconds < 10) {
       seconds = '0' + seconds;
     }
@@ -166,8 +166,8 @@ class Album extends Component {
         <PlayerBar
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
-          currentTime={this.audioElement.currentTime}
-          duration={this.audioElement.duration}
+          currentTime={this.convertTime(this.audioElement.currentTime)}
+          duration={this.convertTime(this.audioElement.duration)}
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
           handlePrevClick={() => this.handlePrevClick()}
           handleNextClick={() => this.handleNextClick()}

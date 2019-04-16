@@ -18,11 +18,11 @@ export default [{
     albumCover: '/assets/images/album_covers/Add_Violence.jpg',
     slug: 'add-violence',
     songs: [
-      { title: 'Less Than', duration: '', audioSrc: '/assets/music/01 - Nine Inch Nails - LESS THAN.mp3' },
-      { title: 'The Lovers', duration: '', audioSrc: '/assets/music/02 - Nine Inch Nails - THE LOVERS.mp3' },
-      { title: 'This Isnt the Place', duration: '', audioSrc: '/assets/music/03 - Nine Inch Nails - THIS ISNT THE PLACE.mp3' },
-      { title: 'Not Anymore', duration: '', audioSrc: '/assets/music/04 - Nine Inch Nails - NOT ANYMORE.mp3' },
-      { title: 'The Background World', duration: '', audioSrc: '/assets/music/05 - Nine Inch Nails - THE BACKGROUND WORLD.mp3' }
+      { title: 'Less Than', duration: '210', audioSrc: '/assets/music/01 - Nine Inch Nails - LESS THAN.mp3' },
+      { title: 'The Lovers', duration: '250', audioSrc: '/assets/music/02 - Nine Inch Nails - THE LOVERS.mp3' },
+      { title: 'This Isnt the Place', duration: '284', audioSrc: '/assets/music/03 - Nine Inch Nails - THIS ISNT THE PLACE.mp3' },
+      { title: 'Not Anymore', duration: '187', audioSrc: '/assets/music/04 - Nine Inch Nails - NOT ANYMORE.mp3' },
+      { title: 'The Background World', duration: '704', audioSrc: '/assets/music/05 - Nine Inch Nails - THE BACKGROUND WORLD.mp3' }
     ]
 }, {
     title: 'Bad Witch',
