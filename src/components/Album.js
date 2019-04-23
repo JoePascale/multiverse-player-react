@@ -99,13 +99,17 @@ class Album extends Component {
   }
 
   convertTime(duration) {
-    var minutes = Math.floor(duration/60);
-    var seconds = Math.round(duration - (minutes*60));
-    if (seconds < 10) {
-      seconds = '0' + seconds;
+    if (duration) {
+      var minutes = Math.floor(duration/60);
+      var seconds = Math.round(duration - (minutes*60));
+      if (seconds < 10) {
+        seconds = '0' + seconds;
+      }
+      duration = minutes + ":" + seconds;
+      return duration;
+    } else {
+      return "-:--";
     }
-    duration = minutes + ":" + seconds;
-    return duration;
   }
 
   onMouseEnter(index) {

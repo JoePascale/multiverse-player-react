@@ -19,6 +19,7 @@ class PlayerBar extends Component {
         <input
           type="range"
           className="seek-bar"
+          //line 23 is problem now that we've refactored time conversion
           value={(this.props.currentTime / this.props.duration) || 0}
           max="1"
           min="0"
